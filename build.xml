@@ -1,0 +1,148 @@
+<project name="KingdomsOfArden-Mods" default="build" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+    
+    <description>Tool Handler Item Mod Ant File Compiler</description>
+    
+    <!-- Define ant plugins used by this build --> 
+    <path id="maven-ant-tasks.classpath" path="ant/maven-ant-tasks-2.1.3.jar" />
+    <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+           uri="antlib:org.apache.maven.artifact.ant"
+           classpathref="maven-ant-tasks.classpath" />
+    <path id="ant-contrib.classpath" path="ant/ant-contrib-1.0b3.jar" />
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="ant/ant-contrib-1.0b3.jar"/>
+        </classpath>
+    </taskdef>
+    
+    <!-- Set global properties for this build -->
+    <property environment="env"/>
+    <property name="dir.src" value="src/main/java"/>
+    <property name="dir.workspace" value="temp"/>
+    <property name="dir.build" value="build"/>
+    <property name="dir.prejar" value="prejar"/>
+    <property name="dir.armormods" value="ArmorMods"/>
+    <property name="dir.scythemods" value="ScytheMods"/>
+    <property name="dir.toolmods" value="ToolMods"/>
+    <property name="dir.weaponmods" value="WeaponMods"/>
+    <property name="dir.maven" value="maven"/>
+
+    
+    <!-- Define Classpath -->
+    <path id="classpath">
+        <fileset id="maven.dependencies" dir="${dir.maven}"/>
+    </path>
+    
+    <!-- Define Build Target -->
+    <target name="build">
+        
+        <!-- Create Maven Dependencies Storage Folder -->
+        <mkdir dir="${dir.maven}"/>
+        
+        <!-- Populate Maven Dependencies -->
+        <artifact:pom id="skillPom" file="pom.xml"/>
+        <artifact:dependencies filesetId="mavenDependencies" pomRefId="skillPom"/>
+        <copy todir="${dir.maven}">
+            <fileset refid="mavenDependencies"/>
+            <mapper classpathref="maven-ant-tasks.classpath"
+                classname="org.apache.maven.artifact.ant.VersionMapper"
+                from="${dependency.versions}" to="flatten"/>
+        </copy>
+        
+        <!-- Create Directories Required for Build -->
+        <mkdir dir="${dir.build}"/>
+        <mkdir dir="${dir.build}/${dir.armormods}"/>
+        <mkdir dir="${dir.build}/${dir.scythemods}"/>
+        <mkdir dir="${dir.build}/${dir.toolmods}"/>
+        <mkdir dir="${dir.build}/${dir.weaponmods}"/>
+        <mkdir dir="${dir.workspace}"/>
+        
+        <!-- Compile All Source Files -->
+        <javac srcdir="${dir.src}" debug="on" destdir="${dir.workspace}" classpathref="classpath" includeantruntime="true" target="1.7"/>
+
+        <!-- Package Jars and Create mod.info -->
+        <foreach target="package" param="dir.moddir">
+            <path>
+                <dirset dir="${dir.workspace}">
+                </dirset>
+            </path>
+        </foreach>
+        
+        
+    </target>
+    
+    <target name="package">
+    	
+        <foreach target="package-jar" param="modname">
+            <path>
+                <fileset dir="${dir.moddir}">
+                    <include name="Mod*.class"/>
+                    <exclude name="Mod*$*.class"/>
+                </fileset>
+            </path>
+        </foreach>
+        
+    </target>
+    
+    <target name="package-jar">
+        
+        <!-- Resolve Mod file Location -->
+        <basename file="${modname}" suffix=".class" property="basename"/>
+        
+        <!-- Create mod.info -->
+        <echo file="${dir.workspace}/${basename}/mod.info" message="main-class: ${dir.moddir}\${basename}"/>
+        <replace file="${dir.workspace}/${basename}/mod.info" token="${basedir}\${dir.workspace}\" value=""/>
+        <replace file="${dir.workspace}/${basename}/mod.info" token="\" value="."/>
+        
+        <!-- Copy class file to folder -->
+        <copy file="${modname}" todir="${dir.workspace}/${basename}"/>
+        
+        <!-- Determine Mod Type -->
+        <condition property="isarmormod">
+            <contains string="${dir.moddir}" substring="armormod"/>
+        </condition>
+        <condition property="isscythemod">
+            <contains string="${dir.moddir}" substring="scythemod"/>
+        </condition>
+	    <condition property="istoolmod">
+            <contains string="${dir.moddir}" substring="toolmod"/>
+        </condition>
+        <condition property="isweaponmod">
+            <contains string="${dir.moddir}" substring="weaponmod"/>
+        </condition>
+        
+        <!-- Package according to type -->
+        <if>
+            <equals arg1="${isarmormod}" arg2="true"/>
+            <then>
+                <jar destfile="${dir.build}/${dir.armormods}/${basename}.jar" basedir="${dir.workspace}/${basename}" includes="**/*.class mod.info"/>
+            </then>
+            <elseif>
+                <equals arg1="${isscythemod}" arg2="true"/>
+                <then>
+                    <jar destfile="${dir.build}/${dir.scythemods}/${basename}.jar" basedir="${dir.workspace}/${basename}" includes="**/*.class mod.info"/>
+                </then>
+            </elseif>
+            <elseif>
+                <equals arg1="${istoolmod}" arg2="true"/>
+                <then>
+                    <jar destfile="${dir.build}/${dir.toolmods}/${basename}.jar" basedir="${dir.workspace}/${basename}" includes="**/*.class mod.info"/>
+                </then>
+            </elseif>
+            <elseif> 
+                <equals arg1="${isweaponmod}" arg2="true"/>
+                <then>
+                    <jar destfile="${dir.build}/${dir.weaponmods}/${basename}.jar" basedir="${dir.workspace}/${basename}" includes="**/*.class mod.info"/>
+                </then>
+            </elseif>
+
+        </if>
+        
+    </target>
+    
+    <target name="copy-class-files">
+        
+        
+        
+    </target>
+    
+</project>
