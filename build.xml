@@ -34,7 +34,6 @@
     
     <!-- Define Build Target -->
     <target name="build">
-        
         <!-- Create Maven Dependencies Storage Folder -->
         <mkdir dir="${dir.maven}"/>
         
@@ -74,13 +73,10 @@
         <!-- Cleanup -->
         <delete dir="${dir.workspace}"/>
         <delete dir="${dir.maven}"/>
-
-        
     </target>
     
     <!-- Iterate through a list of different mod dirs and package jars individually within each dir -->
     <target name="package">
-    	
         <foreach target="package-jar" param="modname">
             <path>
                 <fileset dir="${dir.moddir}">
@@ -89,12 +85,10 @@
                 </fileset>
             </path>
         </foreach>
-        
     </target>
     
     <!-- Package the Jar and Create mod.info -->
     <target name="package-jar">
-        
         <!-- Resolve Mod file Location -->
         <basename file="${modname}" suffix=".class" property="basename"/>
         
@@ -154,12 +148,10 @@
                 </then>
             </elseif>
 
-        </if>
-        
+        </if> 
     </target>
     
     <target name="copy-class-files">
-        
         <!-- Store the mod directory and convert to relative path -->
         <echo file="${dir.workspace}/${basename}/temp" message="${dir.moddir}"/>
         <replace file="${dir.workspace}/${basename}/temp" token="${basedir}\${dir.workspace}\" value=""/>
@@ -168,7 +160,6 @@
         
         <!-- Copy class -->
         <copy file="${classname}" todir="${dir.workspace}/${basename}/${dirpath}"/>
-        
     </target>
     
 </project>
