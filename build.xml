@@ -164,6 +164,7 @@
         <echo file="${dir.workspace}/${basename}/temp" message="${dir.moddir}"/>
         <replace file="${dir.workspace}/${basename}/temp" token="${basedir}\${dir.workspace}\" value=""/>
         <loadfile srcfile="${dir.workspace}/${basename}/temp" property="dirpath"/>
+        <delete file="${dir.workspace}/${basename}/temp"/>
         
         <!-- Copy class -->
         <copy file="${classname}" todir="${dir.workspace}/${basename}/${dirpath}"/>
