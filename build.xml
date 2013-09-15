@@ -62,14 +62,23 @@
         <!-- Package Jars and Create mod.info -->
         <foreach target="package" param="dir.moddir">
             <path>
-                <dirset dir="${dir.workspace}">
-                </dirset>
+                <dirset dir="${dir.workspace}"/>
             </path>
         </foreach>
         
+        <!-- Zip results -->
+        <zip destfile="${dir.build}/KingdomsOfArden-Mods.zip">
+            <fileset dir="${dir.build}" includes="**/*.jar"/>
+        </zip>
+        
+        <!-- Cleanup -->
+        <delete dir="${dir.workspace}"/>
+        <delete dir="${dir.maven}"/>
+
         
     </target>
     
+    <!-- Iterate through a list of different mod dirs and package jars individually within each dir -->
     <target name="package">
     	
         <foreach target="package-jar" param="modname">
@@ -83,6 +92,7 @@
         
     </target>
     
+    <!-- Package the Jar and Create mod.info -->
     <target name="package-jar">
         
         <!-- Resolve Mod file Location -->
@@ -94,7 +104,16 @@
         <replace file="${dir.workspace}/${basename}/mod.info" token="\" value="."/>
         
         <!-- Copy class file to folder -->
-        <copy file="${modname}" todir="${dir.workspace}/${basename}"/>
+        <foreach target="copy-class-files" param="classname">
+            <param name="basename" value="${basename}"/>
+            <param name="dir.moddir" value="${dir.moddir}"/>
+
+            <path>
+                <fileset dir="${dir.moddir}">
+                    <include name="${basename}*.class"/>
+                </fileset>
+            </path>
+        </foreach>
         
         <!-- Determine Mod Type -->
         <condition property="isarmormod">
@@ -141,7 +160,13 @@
     
     <target name="copy-class-files">
         
+        <!-- Store the mod directory and convert to relative path -->
+        <echo file="${dir.workspace}/${basename}/temp" message="${dir.moddir}"/>
+        <replace file="${dir.workspace}/${basename}/temp" token="${basedir}\${dir.workspace}\" value=""/>
+        <loadfile srcfile="${dir.workspace}/${basename}/temp" property="dirpath"/>
         
+        <!-- Copy class -->
+        <copy file="${classname}" todir="${dir.workspace}/${basename}/${dirpath}"/>
         
     </target>
     
