@@ -1,25 +1,20 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
-import org.bukkit.inventory.ItemStack;
+
 
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.WeaponLoreUtil;
+
 
 
 
 public class ModSavage extends WeaponMod {
 
 	public ModSavage() {
-		super("Savage","+4 Bonus Damage",20,true);
-	}
-	
-	@Override
-	public void applyToWeapon(ItemStack weapon){
-		WeaponLoreUtil.setBonusDamage(WeaponLoreUtil.getBonusDamage(weapon)+4,weapon);
-	}
-	
+		super("Savage",20,true);
+		setBonusDamage(4.00);
+	}	
 	
 	@Override
 	public void executeOnWeaponDamage(WeaponDamageEvent event){

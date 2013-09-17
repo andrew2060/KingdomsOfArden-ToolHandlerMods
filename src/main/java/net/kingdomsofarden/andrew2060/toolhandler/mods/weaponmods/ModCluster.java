@@ -6,26 +6,18 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
-import org.bukkit.inventory.ItemStack;
-
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 import com.herocraftonline.heroes.characters.skill.Skill;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.WeaponLoreUtil;
 
 public class ModCluster extends WeaponMod {
 
 	public ModCluster() {
-		super("Cluster", new String[] {"+2 Bonus Damage","+1% Life Steal","+5% Critical Strike Chance","Attacks deal 30% splash damage"}, 4, true);
-	}
-
-	@Override
-	public void applyToWeapon(ItemStack weapon) {
-		WeaponLoreUtil.setBonusDamage(WeaponLoreUtil.getBonusDamage(weapon)+2, weapon);
-		WeaponLoreUtil.setLifeSteal(WeaponLoreUtil.getLifeSteal(weapon)+1, weapon);
-		WeaponLoreUtil.setCritChance(WeaponLoreUtil.getCritChance(weapon)+5, weapon);
-		return;
+		super("Cluster", 4, true, "Attacks deal 30% splash damage");
+		setBonusDamage(2.00);
+		setLifeSteal(1.00);
+		setCritChance(5.00);
 	}
 
 	@Override

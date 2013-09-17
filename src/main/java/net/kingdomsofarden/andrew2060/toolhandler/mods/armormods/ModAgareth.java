@@ -1,25 +1,19 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.armormods;
 
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.ArmorLoreUtil;
 
 public class ModAgareth extends ArmorMod {
 
     public ModAgareth() {
-        super("Agareth", new String[] {"+2.5% Magic Resistance" , "-1% Health Regeneration" , "+3 Bonus Protection"}, 12, true);
+        super("Agareth", 12, true);
+        setMagicResist(2.5);
+        setHealingBonus(-1.00);
+        setProtBonus(3.00);
     }
 
-    @Override
-    public void applyToArmor(ItemStack armor) {
-        ArmorLoreUtil.addMagicResistRating(2.5,armor);
-        ArmorLoreUtil.addHealingBonus(-1, armor);
-        ArmorLoreUtil.addProtBonus(3, armor);
-    }
 
     @Override
     public void executeOnArmorDamage(WeaponDamageEvent event) {

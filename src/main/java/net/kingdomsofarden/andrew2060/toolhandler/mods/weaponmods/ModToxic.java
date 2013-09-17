@@ -4,12 +4,12 @@ import java.util.Iterator;
 import java.util.Random;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.WeaponLoreUtil;
+
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
+
 import org.bukkit.potion.PotionEffectType;
 
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
@@ -19,16 +19,12 @@ public class ModToxic extends WeaponMod {
 	Random rand;
 
 	public ModToxic() {
-		super("Toxic", new String[] {"+3 Bonus Damage","Attacks Have a 20% Chance","Of Dealing Splash Poison"}, 2, true);
+		super("Toxic", 2, true,"Attacks Have a 20% Chance","Of Dealing Splash Poison");
 		this.rand = new Random();
+		setBonusDamage(5.00);
+		setLifeSteal(2.00);
 	}
-
-	@Override
-	public void applyToWeapon(ItemStack weapon) {
-		WeaponLoreUtil.setBonusDamage(WeaponLoreUtil.getBonusDamage(weapon)+5, weapon);
-		WeaponLoreUtil.setLifeSteal(WeaponLoreUtil.getLifeSteal(weapon) + 2, weapon);
-	}
-
+	
 	@Override
 	public void executeOnWeaponDamage(WeaponDamageEvent event) {
 		if(event.isCancelled()) {

@@ -3,7 +3,6 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
-import org.bukkit.inventory.ItemStack;
 
 import com.herocraftonline.heroes.api.events.HeroRegainHealthEvent;
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
@@ -15,12 +14,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 public class ModJustice extends WeaponMod {
 
 	public ModJustice() {
-		super("Justice", new String[] {"Attacks deal Bonus 2% Target Max Health Damage","Attacks heal for 1% Target Max Health"}, 1, true);
-	}
-
-	@Override
-	public void applyToWeapon(ItemStack weapon) {
-		return;
+		super("Justice", 1, true, "Attacks deal Bonus 2% Target Max Health Damage","Attacks heal for 1% Target Max Health");
 	}
 
 	@Override

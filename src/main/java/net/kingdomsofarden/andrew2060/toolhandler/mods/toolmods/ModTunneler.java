@@ -8,6 +8,8 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ToolMod;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.event.block.BlockBreakEvent;
+
+
 import org.bukkit.inventory.ItemStack;
 
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
@@ -15,7 +17,7 @@ import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 public class ModTunneler extends ToolMod {
 
 	public ModTunneler() {
-		super("Tunneler", new String[] {"Also breaks blocks above and below the block being broken. Will not work on obsidian"}, 1, true);
+		super("Tunneler", 1, true, "Also breaks blocks above and below the block being broken. Will not work on obsidian");
 	}
 
 	@Override

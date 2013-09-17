@@ -1,21 +1,17 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
-import org.bukkit.inventory.ItemStack;
+
 
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.WeaponLoreUtil;
+
 
 public class ModVision extends WeaponMod {
 
 	public ModVision() {
-		super("Vision", new String[] {"+10% Critical Strike Chance","Attacks gain 20% Damage at Night"}, 12, true);
-	}
-
-	@Override
-	public void applyToWeapon(ItemStack weapon) {
-		WeaponLoreUtil.setCritChance(WeaponLoreUtil.getCritChance(weapon)+10, weapon);
+		super("Vision", 12, true,"Attacks gain 20% Damage at Night");
+		setCritChance(10.00);
 	}
 
 	@Override

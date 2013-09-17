@@ -1,22 +1,15 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
-import org.bukkit.inventory.ItemStack;
-
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.WeaponLoreUtil;
 
 public class ModAce extends WeaponMod {
 
 	public ModAce() {
-		super("Ace",new String[] {"+5 Bonus Damage","+10% Critical Strike Chance"},4,true);
-	}
-
-	@Override
-	public void applyToWeapon(ItemStack weapon) {
-		WeaponLoreUtil.setBonusDamage(WeaponLoreUtil.getBonusDamage(weapon)+5, weapon);
-		WeaponLoreUtil.setCritChance(WeaponLoreUtil.getCritChance(weapon)+10, weapon);
+		super("Ace",4,true);
+		setBonusDamage(5.00);
+		setCritChance(10.00);
 	}
 
 	@Override

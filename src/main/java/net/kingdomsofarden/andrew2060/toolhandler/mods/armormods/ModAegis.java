@@ -1,9 +1,7 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.armormods;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
 import com.herocraftonline.heroes.Heroes;
@@ -11,20 +9,16 @@ import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 import com.herocraftonline.heroes.characters.Hero;
 import com.herocraftonline.heroes.characters.party.HeroParty;
 
+import net.kingdomsofarden.andrew2060.toolhandler.ToolHandlerPlugin;
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
-import net.kingdomsofarden.andrew2060.toolhandler.util.ArmorLoreUtil;
 
 public class ModAegis extends ArmorMod {
     Heroes heroesPlugin;
     public ModAegis() {
-        super("Aegis", new String[] {"+5% Magic Resistance","+5% Health Regeneration", ChatColor.AQUA + "Unique Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members"}, 1, true);
-        this.heroesPlugin = (Heroes) Bukkit.getPluginManager().getPlugin("Heroes");
-    }
-
-    @Override
-    public void applyToArmor(ItemStack armor) {
-        ArmorLoreUtil.addMagicResistRating(5,armor);
-        ArmorLoreUtil.addHealingBonus(5,armor);
+        super("Aegis", 1, true, ChatColor.AQUA + "Unique Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
+        this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
+        setMagicResist(5.00);
+        setHealingBonus(5.00);
     }
 
     @Override
