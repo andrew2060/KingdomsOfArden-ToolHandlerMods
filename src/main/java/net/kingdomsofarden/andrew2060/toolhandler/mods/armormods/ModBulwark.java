@@ -25,8 +25,7 @@ public class ModBulwark extends ArmorMod {
 
     @Override
     public void executeOnTick(Player p) {
-        // TODO Auto-generated method stub
-
+        return;
     }
 
 }
