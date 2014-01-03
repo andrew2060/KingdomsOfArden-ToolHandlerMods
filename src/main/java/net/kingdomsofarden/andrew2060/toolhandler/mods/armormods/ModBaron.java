@@ -7,7 +7,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 
 public class ModBaron extends ArmorMod {
 
-    public ModBaron(String name, String[] desc, int weight, boolean requiresSlot) {
+    public ModBaron() {
         super("Baron", 1, true);
         setMagicResist(-5.00);
         setHealingBonus(-5.00);
