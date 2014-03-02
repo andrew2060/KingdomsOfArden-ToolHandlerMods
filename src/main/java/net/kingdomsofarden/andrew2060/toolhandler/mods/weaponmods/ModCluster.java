@@ -1,11 +1,13 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 import java.util.Iterator;
+import java.util.UUID;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 import com.herocraftonline.heroes.characters.skill.Skill;
 
@@ -14,7 +16,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 public class ModCluster extends WeaponMod {
 
 	public ModCluster() {
-		super("Cluster", 4, true, "Attacks deal 30% splash damage");
+		super(UUID.fromString("c82c87a2-a1de-11e3-a5e2-0800200c9a66"),"Cluster", 4, true, "Attacks deal 30% splash damage");
 		setBonusDamage(2.00);
 		setLifeSteal(1.00);
 		setCritChance(5.00);

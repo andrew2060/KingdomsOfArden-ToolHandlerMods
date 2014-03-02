@@ -1,10 +1,13 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.ToolHandlerPlugin;
@@ -15,7 +18,7 @@ public class ModZeus extends WeaponMod {
 
 
 	public ModZeus() {
-		super("Zeus", 2, true, "Critical Strikes cause Lightning");
+		super(UUID.fromString("c82caebe-a1de-11e3-a5e2-0800200c9a66"),"Zeus", 2, true, "Critical Strikes cause Lightning");
 		Bukkit.getPluginManager().registerEvents(new ModListener(), ToolHandlerPlugin.instance);
 		setBonusDamage(3.00);
 		setCritChance(5.00);

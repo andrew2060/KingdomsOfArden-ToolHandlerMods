@@ -2,14 +2,15 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 import java.util.Iterator;
 import java.util.Random;
+import java.util.UUID;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
+
 
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-
 import org.bukkit.potion.PotionEffectType;
 
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
@@ -19,7 +20,7 @@ public class ModToxic extends WeaponMod {
 	Random rand;
 
 	public ModToxic() {
-		super("Toxic", 2, true,"Attacks Have a 20% Chance","Of Dealing Splash Poison");
+		super(UUID.fromString("c82caeb7-a1de-11e3-a5e2-0800200c9a66"),"Toxic", 2, true,"Attacks Have a 20% Chance","Of Dealing Splash Poison");
 		this.rand = new Random();
 		setBonusDamage(5.00);
 		setLifeSteal(2.00);

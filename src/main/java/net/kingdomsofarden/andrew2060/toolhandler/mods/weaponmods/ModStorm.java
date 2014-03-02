@@ -2,6 +2,8 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 
 
+import java.util.UUID;
+
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
@@ -10,7 +12,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 public class ModStorm extends WeaponMod {
 
 	public ModStorm() {
-		super("Storm", 1, true, "Attacks gain 20% Damage When Storming");
+		super(UUID.fromString("c82caeb6-a1de-11e3-a5e2-0800200c9a66"),"Storm", 1, true, "Attacks gain 20% Damage When Storming");
 		setBonusDamage(5.00);
 	}
 	

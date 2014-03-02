@@ -1,10 +1,13 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+
 
 
 
@@ -24,7 +27,7 @@ public class ModSilence extends WeaponMod {
 	private Heroes heroesPlugin;
 
 	public ModSilence() {
-		super("Silence", 2, true, "Attacks silence target for 5 Seconds", "Only Triggers Once Every 30 Seconds");
+		super(UUID.fromString("c82caeb4-a1de-11e3-a5e2-0800200c9a66"),"Silence", 2, true, "Attacks silence target for 5 Seconds", "Only Triggers Once Every 30 Seconds");
 		this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
 		Bukkit.getPluginManager().registerEvents(new SilenceListener(), ToolHandlerPlugin.instance);
 		setBonusDamage(2.00);

@@ -1,9 +1,12 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+
 import com.herocraftonline.heroes.Heroes;
 import com.herocraftonline.heroes.api.events.HeroRegainHealthEvent;
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
@@ -19,7 +22,7 @@ public class ModBurning extends WeaponMod {
 	private Heroes heroesPlugin;
 
 	public ModBurning() {
-		super("Burning", 12, true, "Attacks apply a 3 second 50% healing debuff");
+		super(UUID.fromString("5eff2d02-a1de-11e3-a5e2-0800200c9a66"),"Burning", 12, true, "Attacks apply a 3 second 50% healing debuff");
 		this.heroesPlugin = (Heroes) Bukkit.getPluginManager().getPlugin("Heroes");
 		Bukkit.getPluginManager().registerEvents(new HealingListener(), ToolHandlerPlugin.instance);
 		setCritChance(7.00);

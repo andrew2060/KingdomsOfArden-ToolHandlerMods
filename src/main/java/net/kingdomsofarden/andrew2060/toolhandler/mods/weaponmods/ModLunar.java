@@ -1,5 +1,7 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.UUID;
+
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
@@ -7,7 +9,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 public class ModLunar extends WeaponMod {
 
 	public ModLunar() {
-		super("Lunar", 12, true, "+2 Bonus Damage");
+		super(UUID.fromString("c82c87af-a1de-11e3-a5e2-0800200c9a66"),"Lunar", 12, true, "+2 Bonus Damage");
 		setBonusDamage(2.00);
 	}
 	

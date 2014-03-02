@@ -1,19 +1,22 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 import java.util.Iterator;
+import java.util.UUID;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
+
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 import com.herocraftonline.heroes.characters.skill.Skill;
 
 public class ModBeserk extends WeaponMod {
 
 	public ModBeserk() {
-		super("Beserk", 2, true, "Attacks deal 5 Splash Magic Damage");
+		super(UUID.fromString("f978e161-a1dd-11e3-a5e2-0800200c9a66"),"Beserk", 2, true, "Attacks deal 5 Splash Magic Damage");
 		setBonusDamage(5.00);
 		setLifeSteal(2.00);
 	}

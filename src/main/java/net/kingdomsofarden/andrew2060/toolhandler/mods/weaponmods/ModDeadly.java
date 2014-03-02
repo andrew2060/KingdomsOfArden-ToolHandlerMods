@@ -1,10 +1,13 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
+
 import com.herocraftonline.heroes.Heroes;
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 import com.herocraftonline.heroes.characters.CharacterTemplate;
@@ -18,7 +21,7 @@ public class ModDeadly extends WeaponMod {
 	private Heroes heroesPlugin;
 
 	public ModDeadly() {
-		super("Deadly", 4, true, "Attacks apply a 1 Second 100% Healing Debuff");
+		super(UUID.fromString("c82c87a3-a1de-11e3-a5e2-0800200c9a66"),"Deadly", 4, true, "Attacks apply a 1 Second 100% Healing Debuff");
 		this.heroesPlugin = (Heroes) Bukkit.getPluginManager().getPlugin("Heroes");
 		Bukkit.getPluginManager().registerEvents(new HealingListener(heroesPlugin), ToolHandlerPlugin.instance);
 		setBonusDamage(5.00);

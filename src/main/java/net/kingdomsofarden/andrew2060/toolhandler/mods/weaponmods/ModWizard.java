@@ -1,7 +1,10 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.UUID;
+
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+
 
 
 import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
@@ -12,7 +15,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 
 public class ModWizard extends WeaponMod {
 	public ModWizard() {
-		super("Wizard", 4, true ,"Attacks deal 90% Physical Damage","Attacks deal 10% Magical Damage");
+		super(UUID.fromString("c82caebd-a1de-11e3-a5e2-0800200c9a66"),"Wizard", 4, true ,"Attacks deal 90% Physical Damage","Attacks deal 10% Magical Damage");
 		setBonusDamage(5.00);
 	}
 	
