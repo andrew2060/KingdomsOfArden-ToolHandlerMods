@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.kingdomsofarden</groupId>
 	<artifactId>mods</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>KingdomsOfArden-Mods</name>
 	<description>Weapon Mods for mc.kingdomsofarden.net</description>
 
@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.7.2-R0.3-SNAPSHOT</version>
+			<version>1.7.2-R0.4-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
