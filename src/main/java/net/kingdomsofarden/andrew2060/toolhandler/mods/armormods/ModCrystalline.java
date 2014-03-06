@@ -1,6 +1,7 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.armormods;
 
 import java.util.Random;
+import java.util.UUID;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -17,7 +18,7 @@ public class ModCrystalline extends ArmorMod {
     Random rand;
     
     public ModCrystalline() {
-        super("Crystalline", 20, true, "Basic Attacks have a 5% chance of being reflected for 100% of damage");
+        super(UUID.fromString("14112ee4-a4d9-11e3-be40-425861b86ab6"),"Crystalline", 20, true, "Basic Attacks have a 5% chance of being reflected for 100% of damage");
         setMagicResist(2.00);
         setHealingBonus(10.00);
         rand = new Random();

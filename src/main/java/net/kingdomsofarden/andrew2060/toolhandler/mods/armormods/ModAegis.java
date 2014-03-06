@@ -1,5 +1,7 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.armormods;
 
+import java.util.UUID;
+
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
@@ -15,7 +17,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 public class ModAegis extends ArmorMod {
     Heroes heroesPlugin;
     public ModAegis() {
-        super("Aegis", 1, true, ChatColor.AQUA + "Unique Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
+        super(UUID.fromString("1411444c-a4d9-11e3-be40-425861b86ab6"),"Aegis", 1, true, ChatColor.AQUA + "Unique Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
         this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
         setMagicResist(5.00);
         setHealingBonus(5.00);
