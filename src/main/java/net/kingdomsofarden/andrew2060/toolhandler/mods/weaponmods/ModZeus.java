@@ -1,5 +1,6 @@
 package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -27,7 +28,7 @@ public class ModZeus extends WeaponMod {
     public class ModListener implements Listener {
         @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
         public void onCritStrike(CriticalStrikeEvent event) {
-            if(!event.getMods().contains("Zeus")) {
+            if(!Arrays.asList(event.getMods()).contains(UUID.fromString("c82caebe-a1de-11e3-a5e2-0800200c9a66"))) {
                 return;
             }
             Location loc = event.getEvent().getEntity().getLocation();
