@@ -2,6 +2,7 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.toolmods;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ToolMod;
 
@@ -17,7 +18,7 @@ import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 public class ModTunneler extends ToolMod {
 
 	public ModTunneler() {
-		super("Tunneler", 1, true, "Also breaks blocks above and below the block being broken. Will not work on obsidian");
+		super(UUID.fromString("e3007350-a717-11e3-846f-425861b86ab6"),"Tunneler", 1, true, "Also breaks blocks above and below the block being broken. Will not work on obsidian");
 	}
 
 	@Override
@@ -31,11 +32,8 @@ public class ModTunneler extends ToolMod {
 			return;
 		}
 		List<Block> toBreak = new LinkedList<Block>();
-		Block b5 = event.getBlock();
-		Block b8 = b5.getRelative(BlockFace.UP);
-		Block b2 = b5.getRelative(BlockFace.DOWN);
-		b8.breakNaturally();
-		b2.breakNaturally();
+		Block b = event.getBlock();
+		toBreak.add(b);
 		
 	}
 
