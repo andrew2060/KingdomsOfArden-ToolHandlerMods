@@ -13,7 +13,7 @@ public class ModBaron extends ArmorMod {
     public ModBaron() {
         super(UUID.fromString("14113e7a-a4d9-11e3-be40-425861b86ab6"),"Baron", 1, true);
         setMagicResist(-5.00);
-        setHealingBonus(-5.00);
+        setKnockbackResist(-5.00);
         setProtBonus(7.00);
     }
 

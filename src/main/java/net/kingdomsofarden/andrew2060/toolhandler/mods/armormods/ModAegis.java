@@ -20,7 +20,7 @@ public class ModAegis extends ArmorMod {
         super(UUID.fromString("1411444c-a4d9-11e3-be40-425861b86ab6"),"Aegis", 1, true, ChatColor.AQUA + "Unique Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
         this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
         setMagicResist(5.00);
-        setHealingBonus(5.00);
+        setKnockbackResist(5.00);
     }
 
     @Override

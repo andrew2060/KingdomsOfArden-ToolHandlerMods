@@ -13,7 +13,7 @@ public class ModBenevolent extends ArmorMod {
     public ModBenevolent() {
         super(UUID.fromString("14113a7e-a4d9-11e3-be40-425861b86ab6"),"Benevolent", 8, true);
         setMagicResist(2.5);
-        setHealingBonus(12.00);
+        setKnockbackResist(12.00);
     }
 
     @Override

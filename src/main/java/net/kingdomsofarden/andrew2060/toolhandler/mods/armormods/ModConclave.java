@@ -12,7 +12,7 @@ public class ModConclave extends ArmorMod {
 
     public ModConclave() {
         super(UUID.fromString("141131e6-a4d9-11e3-be40-425861b86ab6"),"Conclave", 16, false);
-        setHealingBonus(10.00);
+        setKnockbackResist(10.00);
     }
 
     @Override

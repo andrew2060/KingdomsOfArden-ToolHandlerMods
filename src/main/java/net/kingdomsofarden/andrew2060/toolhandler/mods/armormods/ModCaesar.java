@@ -13,7 +13,7 @@ public class ModCaesar extends ArmorMod {
     public ModCaesar() {
         super(UUID.fromString("14113556-a4d9-11e3-be40-425861b86ab6"),"Caesar", 1, false);
         setMagicResist(5.00);
-        setHealingBonus(15.00);
+        setKnockbackResist(15.00);
     }
 
     @Override

@@ -20,7 +20,7 @@ public class ModCrystalline extends ArmorMod {
     public ModCrystalline() {
         super(UUID.fromString("14112ee4-a4d9-11e3-be40-425861b86ab6"),"Crystalline", 20, true, "Basic Attacks have a 5% chance of being reflected for 100% of damage");
         setMagicResist(2.00);
-        setHealingBonus(10.00);
+        setKnockbackResist(10.00);
         rand = new Random();
     }
 
