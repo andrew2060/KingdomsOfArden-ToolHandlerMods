@@ -2,8 +2,10 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+
 
 
 
@@ -15,7 +17,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 
 public class ModWizard extends WeaponMod {
 	public ModWizard() {
-		super(UUID.fromString("c82caebd-a1de-11e3-a5e2-0800200c9a66"),"Wizard", 4, true ,"Attacks deal 90% Physical Damage","Attacks deal 10% Magical Damage");
+		super(UUID.fromString("c82caebd-a1de-11e3-a5e2-0800200c9a66"),"Wizard", 4, true, ChatColor.AQUA + "Bonus: " + ChatColor.GRAY + "Attacks deal 90% Physical Damage", ChatColor.AQUA + "Bonus: " + ChatColor.GRAY + "Attacks deal 10% Magic Damage");
 		setBonusDamage(5.00);
 	}
 	

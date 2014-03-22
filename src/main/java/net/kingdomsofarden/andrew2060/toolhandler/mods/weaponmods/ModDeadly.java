@@ -3,6 +3,7 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,7 +22,7 @@ public class ModDeadly extends WeaponMod {
 	private Heroes heroesPlugin;
 
 	public ModDeadly() {
-		super(UUID.fromString("c82c87a3-a1de-11e3-a5e2-0800200c9a66"),"Deadly", 4, true, "Attacks apply a 1 Second 100% Healing Debuff");
+		super(UUID.fromString("c82c87a3-a1de-11e3-a5e2-0800200c9a66"),"Deadly", 4, true, ChatColor.YELLOW + "On-Hit: " + ChatColor.RED + "-100% " + ChatColor.GRAY + "Target Healing (D: 1s)");
 		this.heroesPlugin = (Heroes) Bukkit.getPluginManager().getPlugin("Heroes");
 		Bukkit.getPluginManager().registerEvents(new HealingListener(heroesPlugin), ToolHandlerPlugin.instance);
 		setBonusDamage(5.00);

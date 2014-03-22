@@ -3,6 +3,7 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,7 +23,7 @@ public class ModBurning extends WeaponMod {
 	private Heroes heroesPlugin;
 
 	public ModBurning() {
-		super(UUID.fromString("5eff2d02-a1de-11e3-a5e2-0800200c9a66"),"Burning", 12, true, "Attacks apply a 3 second 50% healing debuff");
+		super(UUID.fromString("5eff2d02-a1de-11e3-a5e2-0800200c9a66"),"Burning", 12, true, ChatColor.YELLOW + "On-Hit: " + ChatColor.RED + "-50% " + ChatColor.GRAY + " Target Healing (D: 3s)");
 		this.heroesPlugin = (Heroes) Bukkit.getPluginManager().getPlugin("Heroes");
 		Bukkit.getPluginManager().registerEvents(new HealingListener(), ToolHandlerPlugin.instance);
 		setCritChance(7.00);

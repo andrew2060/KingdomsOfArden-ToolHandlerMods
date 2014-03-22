@@ -2,6 +2,7 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
@@ -13,7 +14,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 public class ModDevil extends WeaponMod {
 
 	public ModDevil() {
-		super(UUID.fromString("c82c87a4-a1de-11e3-a5e2-0800200c9a66"),"Devil", 4, true, "Attacks deal 3 Bonus True Damage");
+		super(UUID.fromString("c82c87a4-a1de-11e3-a5e2-0800200c9a66"),"Devil", 4, true, ChatColor.AQUA + "Bonus: " + ChatColor.GREEN + "+3" + ChatColor.GRAY + " True Damage");
 		setCritChance(5.00);
 	}
 

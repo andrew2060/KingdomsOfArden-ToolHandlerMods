@@ -3,6 +3,7 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.armormods;
 import java.util.Random;
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
@@ -18,7 +19,7 @@ public class ModCrystalline extends ArmorMod {
     Random rand;
     
     public ModCrystalline() {
-        super(UUID.fromString("14112ee4-a4d9-11e3-be40-425861b86ab6"),"Crystalline", 20, true, "Basic Attacks have a 5% chance of being reflected for 100% of damage");
+        super(UUID.fromString("14112ee4-a4d9-11e3-be40-425861b86ab6"),"Crystalline", 20, true, ChatColor.YELLOW + "On-Hit: " + ChatColor.GREEN + "+5% " + ChatColor.GRAY + "Chance of Attack Reflection");
         setMagicResist(2.00);
         setKnockbackResist(10.00);
         rand = new Random();
@@ -35,8 +36,6 @@ public class ModCrystalline extends ArmorMod {
 
     @Override
     public void executeOnTick(Player p) {
-        // TODO Auto-generated method stub
-
     }
 
 }

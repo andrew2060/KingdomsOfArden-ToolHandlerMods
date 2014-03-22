@@ -2,6 +2,7 @@ package net.kingdomsofarden.andrew2060.toolhandler.mods.weaponmods;
 
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
@@ -12,7 +13,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 
 public class ModChasm extends WeaponMod {
 	public ModChasm() {
-		super(UUID.fromString("c82c87a0-a1de-11e3-a5e2-0800200c9a66"),"Chasm", 24, true,"Attacks deal 2 Bonus Magic Damage");
+		super(UUID.fromString("c82c87a0-a1de-11e3-a5e2-0800200c9a66"),"Chasm", 24, true, ChatColor.AQUA + "Bonus: " + ChatColor.GREEN + "+2" + ChatColor.GRAY + " Magic Damage");
 	}
 
 	@Override

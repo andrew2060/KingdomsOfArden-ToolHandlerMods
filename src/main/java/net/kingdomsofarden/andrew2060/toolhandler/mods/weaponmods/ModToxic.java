@@ -8,6 +8,8 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.WeaponMod;
 
 
 
+
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -20,7 +22,7 @@ public class ModToxic extends WeaponMod {
 	Random rand;
 
 	public ModToxic() {
-		super(UUID.fromString("c82caeb7-a1de-11e3-a5e2-0800200c9a66"),"Toxic", 2, true,"Attacks Have a 20% Chance","Of Dealing Splash Poison");
+		super(UUID.fromString("c82caeb7-a1de-11e3-a5e2-0800200c9a66"),"Toxic", 2, true, ChatColor.YELLOW + "On-Hit: " + ChatColor.GREEN + "+20% " + ChatColor.GRAY + "Chance for Splash Poison");
 		this.rand = new Random();
 		setBonusDamage(5.00);
 		setLifeSteal(2.00);
