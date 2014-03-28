@@ -13,8 +13,8 @@ public class ModDoom extends ArmorMod {
     public ModDoom() {
         super(UUID.fromString("e2ae0ccc-b604-11e3-9f3b-425861b86ab6"), "Doom", 2, true);
         this.setKnockbackResist(5.00);
-        this.setMagicResist(-50.00);
-        this.setProtBonus(20.00);
+        this.setMagicResist(-7.50);
+        this.setProtBonus(15.0);
     }
 
     @Override

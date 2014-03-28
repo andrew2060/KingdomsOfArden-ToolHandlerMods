@@ -14,12 +14,12 @@ import com.herocraftonline.heroes.characters.party.HeroParty;
 import net.kingdomsofarden.andrew2060.toolhandler.ToolHandlerPlugin;
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 
-public class ModLeadership extends ArmorMod {
+public class ModKeres extends ArmorMod {
     Heroes heroesPlugin;
-    public ModLeadership() {
-        super(UUID.fromString("1411444c-a4d9-11e3-be40-425861b86ab6"),"Leadership", 1, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.DARK_GREEN + "Aura:" + ChatColor.GRAY + " 20% Damage Boost to Nearby Party Members");
+    public ModKeres() {
+        super(UUID.fromString("48223ac0-b618-11e3-a5e2-0800200c9a66"),"Keres", 1, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.DARK_GREEN + "Aura:" + ChatColor.GRAY + " 20% Movement Speed to Nearby Party Members");
         this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
-        setProtBonus(2.50);
+        setProtBonus(5.00);
         setKnockbackResist(5.00);
         setMagicResist(-5.00);
     }
@@ -34,13 +34,13 @@ public class ModLeadership extends ArmorMod {
         Hero h = heroesPlugin.getCharacterManager().getHero(p);
         HeroParty hP = h.getParty();
         if(hP == null) {
-            pEMan.addPotionEffectStacking(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1),p,false);
+            pEMan.addPotionEffectStacking(PotionEffectType.SPEED.createEffect(21, 1),p,false);
             return;
         } else {
-            p.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1));
+            p.addPotionEffect(PotionEffectType.SPEED.createEffect(21, 1));
             for(Hero member : hP.getMembers()) {
                 if(member.getPlayer().getLocation().distanceSquared(p.getLocation()) < 169) {
-                    pEMan.addPotionEffectStacking(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1),member.getEntity(),false);
+                    pEMan.addPotionEffectStacking(PotionEffectType.SPEED.createEffect(21, 1),member.getEntity(),false);
                 }
             }
         }

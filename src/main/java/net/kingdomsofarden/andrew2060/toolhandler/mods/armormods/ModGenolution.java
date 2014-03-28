@@ -10,11 +10,11 @@ import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 
-public class ModAzure extends ArmorMod {
+public class ModGenolution extends ArmorMod {
 
-    public ModAzure() {
-        super(UUID.fromString("14114064-a4d9-11e3-be40-425861b86ab6"),"Azure", 4, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.YELLOW + "On-Hit: " + ChatColor.GREEN + "+20% " + ChatColor.GRAY + "Self Speed (D: 1s)");
-        this.applySelfOnDamage.add(PotionEffectType.SPEED.createEffect(20, 1));
+    public ModGenolution() {
+        super(UUID.fromString("a7d0c9d0-b61a-11e3-a5e2-0800200c9a66"),"Genolution", 3, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.YELLOW + "On-Hit: " + ChatColor.GREEN + "+20% " + ChatColor.GRAY + "Damage Boost (D: 1s)");
+        this.applySelfOnDamage.add(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1));
     }
 
     @Override
