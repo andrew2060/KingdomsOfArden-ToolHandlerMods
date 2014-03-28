@@ -14,13 +14,14 @@ import com.herocraftonline.heroes.characters.party.HeroParty;
 import net.kingdomsofarden.andrew2060.toolhandler.ToolHandlerPlugin;
 import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 
-public class ModAegis extends ArmorMod {
+public class ModLeadership extends ArmorMod {
     Heroes heroesPlugin;
-    public ModAegis() {
-        super(UUID.fromString("1411444c-a4d9-11e3-be40-425861b86ab6"),"Aegis", 1, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.DARK_GREEN + "Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
+    public ModLeadership() {
+        super(UUID.fromString("1411444c-a4d9-11e3-be40-425861b86ab6"),"Leadership", 1, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.DARK_GREEN + "Aura:" + ChatColor.GRAY + " 20% Damage to Nearby Party Members");
         this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
-        setMagicResist(2.50);
+        setProtBonus(2.50);
         setKnockbackResist(5.00);
+        setMagicResist(-5.00);
     }
 
     @Override
@@ -33,13 +34,13 @@ public class ModAegis extends ArmorMod {
         Hero h = heroesPlugin.getCharacterManager().getHero(p);
         HeroParty hP = h.getParty();
         if(hP == null) {
-            pEMan.addPotionEffectStacking(PotionEffectType.DAMAGE_RESISTANCE.createEffect(20, 1),p,false);
+            pEMan.addPotionEffectStacking(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1),p,false);
             return;
         } else {
-            p.addPotionEffect(PotionEffectType.DAMAGE_RESISTANCE.createEffect(20, 1));
+            p.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1));
             for(Hero member : hP.getMembers()) {
                 if(member.getPlayer().getLocation().distanceSquared(p.getLocation()) < 169) {
-                    pEMan.addPotionEffectStacking(PotionEffectType.DAMAGE_RESISTANCE.createEffect(20, 1),member.getEntity(),false);
+                    pEMan.addPotionEffectStacking(PotionEffectType.INCREASE_DAMAGE.createEffect(20, 1),member.getEntity(),false);
                 }
             }
         }

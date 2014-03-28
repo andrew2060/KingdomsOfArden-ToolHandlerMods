@@ -13,7 +13,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 public class ModBulwark extends ArmorMod {
 
     public ModBulwark() {
-        super(UUID.fromString("14113858-a4d9-11e3-be40-425861b86ab6"),"Bulwark", 1, true, ChatColor.AQUA + "Bonus: " + ChatColor.GREEN + "-30% " + ChatColor.GRAY + "Projectile Damage");
+        super(UUID.fromString("14113858-a4d9-11e3-be40-425861b86ab6"),"Bulwark", 1, true, ChatColor.AQUA + "Bonus: " + ChatColor.GREEN + "+10% " + ChatColor.GRAY + "Projectile Resistance");
         setMagicResist(10.00);
         setProtBonus(3.00);
     }
@@ -21,7 +21,7 @@ public class ModBulwark extends ArmorMod {
     @Override
     public void executeOnArmorDamage(WeaponDamageEvent event) {
         if(event.getAttackerEntity() instanceof Projectile) {
-            event.setDamage(event.getDamage() * 0.7);
+            event.setDamage(event.getDamage() * 0.9);
             return;
         }
     }
