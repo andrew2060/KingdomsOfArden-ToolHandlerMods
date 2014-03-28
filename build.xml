@@ -95,9 +95,7 @@
         <!-- Create mod.info -->
         <echo file="${dir.workspace}/${basename}/mod.info" message="main-class: ${dir.moddir}/${basename}"/>
         <replace file="${dir.workspace}/${basename}/mod.info" token="${basedir}/${dir.workspace}/" value=""/>
-        <replace file="${dir.workspace}/${basename}/mod.info" token="${basedir}\${dir.workspace}\" value=""/>
         <replace file="${dir.workspace}/${basename}/mod.info" token="/" value="."/>
-        <replace file="${dir.workspace}/${basename}/mod.info" token="\" value="."/>
         
         <!-- Copy class file to folder -->
         <foreach target="copy-class-files" param="classname">
