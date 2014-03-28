@@ -17,7 +17,7 @@ import net.kingdomsofarden.andrew2060.toolhandler.mods.typedefs.ArmorMod;
 public class ModAegis extends ArmorMod {
     Heroes heroesPlugin;
     public ModAegis() {
-        super(UUID.fromString("1411444c-a4d9-11e3-be40-425861b86ab6"),"Aegis", 1, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.DARK_GREEN + "Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
+        super(UUID.fromString("776fdc50-b62d-11e3-a5e2-0800200c9a66"),"Aegis", 1, true, ChatColor.LIGHT_PURPLE + "Unique " + ChatColor.DARK_GREEN + "Aura:" + ChatColor.GRAY + " 20% Damage Reduction to Nearby Party Members");
         this.heroesPlugin = ToolHandlerPlugin.instance.heroesPlugin;
         setMagicResist(2.50);
         setKnockbackResist(5.00);
