@@ -19,7 +19,7 @@ public class ModJuno extends ArmorMod {
     Random rand;
     
     public ModJuno() {
-        super(UUID.fromString("14112ee4-a4d9-11e3-be40-425861b86ab6"),"Juno", 5, true, ChatColor.YELLOW + "On-Hit: " + ChatColor.GREEN + "+10% " + ChatColor.GRAY + "Chance of Attack Reflection");
+        super(UUID.fromString("3ec76f70-de7e-11e3-8b68-0800200c9a66"),"Juno", 2, true, ChatColor.YELLOW + "On-Hit: " + ChatColor.GREEN + "+10% " + ChatColor.GRAY + "Chance of Attack Reflection");
         setMagicResist(2.00);
         setKnockbackResist(10.00);
         setProtBonus(-2.00);
