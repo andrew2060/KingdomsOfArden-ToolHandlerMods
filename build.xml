@@ -159,7 +159,7 @@
         <delete file="${dir.workspace}/${basename}/temp"/>
         
         <!-- Copy class -->
-        <copy file="${classname}" todir="${dirpath}"/>
+        <copy file="${classname}" todir="${dir.workspace}/${basename}"/>
     </target>
     
 </project>
